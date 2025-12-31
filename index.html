@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nexus W3B</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f0519">
+  <link rel="icon" type="image/png" href="https://data.wolfethyst.tv/assets/nexus_icon">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="nexus-desktop">
+
+  <div id="appLoader">
+    <div class="loader-content">
+      <img src="https://data.wolfethyst.tv/assets/nexus_icon" class="loader-icon" alt="Nexus">
+      <div class="loader-text">INITIALIZING NEXUS...</div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <header class="headerRow">
+      <div class="header-left-group">
+        <div id="loginArea">
+           <button id="connectWalletBtn" class="nexus-btn">CONNECT WANDER</button>
+        </div>
+        <div id="headerCrystalDisplay">
+          <span id="headerPoints">0 Crystals</span>
+        </div>
+      </div>
+      <div class="header-right-group">
+        <span class="header-title">NEXUS <span class="beta-tag">W3B</span></span>
+      </div>
+    </header>
+
+    <div class="grid" id="mainGrid">
+      <aside class="col-left">
+        <div class="panel">
+          <div class="panel-header">Played Games</div>
+          <div class="panel-body"><div class="games-grid" id="playedGamesGrid"></div></div>
+        </div>
+      </aside>
+
+      <section class="col-center">
+        <div class="panel">
+          <div class="stream-header"><span id="streamTitleLabel">Nexus Stream</span></div>
+          <div class="streamOuter">
+            <video id="main-video-player" controls playsinline crossorigin="anonymous"></video>
+          </div>
+        </div>
+      </section>
+
+      <aside class="col-right">
+        <div class="panel">
+          <div class="panel-header">Community Chat</div>
+          <div id="chatPanel"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  <script type="module">
+    import * as ao from "https://unpkg.com/@permaweb/aoconnect@0.0.60/dist/browser.js";
+    window.ao = ao;
+  </script>
+  
+  <script type="module" src="./modules/index.js"></script>
+</body>
+</html>
